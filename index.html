@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arga</title>
+<meta name="description" content="Arga: expert evaluation for AI video models. Vetted Indian film, VFX and editing professionals rate AI-generated video with timestamped, craft-specific reasons.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f1115'/><text y='70' x='50' text-anchor='middle' font-size='58' font-family='Georgia,serif' fill='%23e8b668'>A</text></svg>">
+<style>
+  :root{
+    --bg:#0d0f13; --panel:#14171d; --line:#232833;
+    --ink:#eef1f6; --dim:#9aa4b2; --gold:#e8b668; --accent:#7fb3ff;
+    --max:980px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font:16px/1.65 ui-sans-serif,-apple-system,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  a{color:var(--accent)}
+  header{padding:26px 0;border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:baseline;gap:12px}
+  .logo{font:600 25px/1 Georgia,serif;color:var(--gold);letter-spacing:.02em}
+  .tag{color:var(--dim);font-size:13.5px}
+  .hero{padding:72px 0 56px}
+  h1{font:600 clamp(30px,5.2vw,50px)/1.14 Georgia,serif;margin:0 0 20px;letter-spacing:-.01em}
+  h1 em{color:var(--gold);font-style:normal}
+  .lede{font-size:clamp(16.5px,2.1vw,19px);color:#c9d2de;max-width:68ch;margin:0 0 14px}
+  .sub{color:var(--dim);max-width:66ch;font-size:15.5px}
+  section{padding:46px 0;border-top:1px solid var(--line)}
+  h2{font:600 13px/1 ui-sans-serif,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 26px}
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(248px,1fr))}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px}
+  .card h3{margin:0 0 9px;font-size:16.5px;font-weight:600}
+  .card p{margin:0;color:var(--dim);font-size:14.6px}
+  .n{display:inline-grid;place-items:center;width:25px;height:25px;border-radius:50%;
+     background:rgba(232,182,104,.12);color:var(--gold);font-size:12.5px;font-weight:700;margin-bottom:11px}
+  ul.plain{margin:0;padding:0;list-style:none}
+  ul.plain li{padding:11px 0;border-bottom:1px dashed var(--line);color:#c4cdd9;font-size:15.3px}
+  ul.plain li:last-child{border-bottom:0}
+  ul.plain b{color:var(--ink);font-weight:600}
+  .contact{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:8px}
+  .btn{display:inline-block;background:var(--gold);color:#17120a;font-weight:650;
+       padding:12px 20px;border-radius:9px;text-decoration:none;font-size:15px}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  footer{border-top:1px solid var(--line);padding:30px 0 48px;color:var(--dim);font-size:13.6px}
+  .note{color:var(--dim);font-size:13.6px;margin-top:18px}
+  @media (max-width:560px){ .hero{padding:52px 0 40px} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap brand">
+    <span class="logo">Arga</span>
+    <span class="tag">Expert evaluation for AI video</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <h1>The people judging AI video<br>should be <em>filmmakers</em>.</h1>
+    <p class="lede">
+      Arga puts vetted Indian film, VFX and editing professionals in front of AI-generated
+      video. They compare clips in pairs and write timestamped, craft-specific reasons —
+      where the camera move breaks, where light direction flips between cuts, why a shot
+      doesn't hold.
+    </p>
+    <p class="sub">
+      Every batch is gold-checked and inter-rater agreement is tracked, so the preference
+      data that comes out is something a model team can actually train and benchmark on.
+    </p>
+  </div>
+
+  <section>
+    <h2>How a pilot runs</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="n">1</span>
+        <h3>You send clips</h3>
+        <p>Model outputs, paired however you need — A/B, ablations, or checkpoint comparisons.</p>
+      </div>
+      <div class="card">
+        <span class="n">2</span>
+        <h3>Experts rate them</h3>
+        <p>Working film, VFX and edit professionals score against a structured craft rubric and leave timestamped notes.</p>
+      </div>
+      <div class="card">
+        <span class="n">3</span>
+        <h3>You get clean data</h3>
+        <p>Labelled pairs with reasons, gold-pair quality checks, and Cohen's kappa agreement per rater.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What makes it different</h2>
+    <ul class="plain">
+      <li><b>Craft, not vibes.</b> Raters are people who light, shoot and cut for a living — so the feedback names the specific failure, not just "looks worse".</li>
+      <li><b>Quality you can audit.</b> Seeded gold pairs catch low-effort raters; agreement is measured, not assumed.</li>
+      <li><b>India's talent depth.</b> One of the world's largest working film and VFX communities, at a fraction of US evaluation cost.</li>
+      <li><b>Built for handoff.</b> Exports are structured datasets, not spreadsheets someone has to clean up.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p class="sub">Running pilots with video-model labs and data vendors. If you're training or evaluating a video model, get in touch.</p>
+    <div class="contact">
+      <a class="btn" href="mailto:abhi@arga.co.in">abhi@arga.co.in</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/abhiraj-films/" rel="noopener">LinkedIn</a>
+    </div>
+    <p class="note">Arga — founded 2026. Abhi Raj, founder. Based in India.</p>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  © <span id="y">2026</span> Arga. All rights reserved.
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>

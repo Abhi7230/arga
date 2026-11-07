@@ -74,6 +74,10 @@
       Every batch is gold-checked and inter-rater agreement is tracked, so the preference
       data that comes out is something a model team can actually train and benchmark on.
     </p>
+    <div class="contact">
+      <a class="btn" href="mailto:abhi@arga.co.in?subject=Arga%20pilot">Talk about a pilot</a>
+      <a class="btn ghost" href="/method.html">Read the method &rarr;</a>
+    </div>
   </div>
 
   <section>
@@ -95,6 +99,18 @@
         <p>Labelled pairs with reasons, gold-pair quality checks, and Cohen's kappa agreement per rater.</p>
       </div>
     </div>
+  </section>
+
+  <section>
+    <h2>How quality is enforced</h2>
+    <ul class="plain">
+      <li><b>Gold pairs, ~10% of every queue.</b> Items with a known answer, seeded invisibly. Raters below 75% accuracy are flagged.</li>
+      <li><b>Overlap set, ~20% of pairs.</b> Rated twice, giving Cohen's &kappa; per rater pair and overall percent agreement.</li>
+      <li><b>Timestamped evidence, enforced at entry.</b> Every rating needs a written reason citing a moment in the clip — <em>0:03, the light direction flips</em>. No timestamp, no submission.</li>
+      <li><b>Position randomised, models hidden.</b> Left/right flips per rater and resolves back to the original A/B at export, so screen position can't leak into the labels.</li>
+      <li><b>Ratings are append-only.</b> No edit endpoint, no overwrite. A submitted judgement is immutable.</li>
+    </ul>
+    <p class="note">The full write-up, including the limits of what this data can tell you, is on the <a href="/method.html">method page</a>.</p>
   </section>
 
   <section>

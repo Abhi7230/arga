@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method — Arga</title>
+<meta name="description" content="How Arga collects expert craft judgements on AI-generated video: blind pairwise comparison, position randomisation, seeded gold pairs, measured inter-rater agreement, timestamped evidence.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f1115'/><text y='70' x='50' text-anchor='middle' font-size='58' font-family='Georgia,serif' fill='%23e8b668'>A</text></svg>">
+<style>
+  :root{
+    --bg:#0d0f13; --panel:#14171d; --line:#232833;
+    --ink:#eef1f6; --dim:#9aa4b2; --gold:#e8b668; --accent:#7fb3ff;
+    --max:860px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font:16px/1.68 ui-sans-serif,-apple-system,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  a{color:var(--accent)}
+  header{padding:26px 0;border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .logo{font:600 25px/1 Georgia,serif;color:var(--gold);letter-spacing:.02em;text-decoration:none}
+  .tag{color:var(--dim);font-size:13.5px}
+  .back{margin-left:auto;font-size:14px}
+  .hero{padding:60px 0 40px}
+  h1{font:600 clamp(28px,4.6vw,42px)/1.16 Georgia,serif;margin:0 0 18px;letter-spacing:-.01em}
+  .lede{font-size:clamp(16px,2vw,18px);color:#c9d2de;max-width:66ch;margin:0}
+  section{padding:40px 0;border-top:1px solid var(--line)}
+  h2{font:600 13px/1 ui-sans-serif,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 20px}
+  h3{margin:26px 0 8px;font-size:17px;font-weight:600}
+  h3:first-of-type{margin-top:0}
+  p{margin:0 0 14px;color:#c4cdd9;max-width:68ch}
+  p.tight{margin-bottom:8px}
+  .dim{color:var(--dim)}
+  ul{margin:0 0 14px;padding-left:20px;color:#c4cdd9;max-width:68ch}
+  li{margin:9px 0}
+  b{color:var(--ink);font-weight:600}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px;margin:18px 0}
+  .spec{display:grid;gap:0;margin:0}
+  .spec div{display:flex;gap:16px;padding:11px 0;border-bottom:1px dashed var(--line);font-size:15px}
+  .spec div:last-child{border-bottom:0}
+  .spec dt{color:var(--gold);font-weight:600;min-width:150px;flex-shrink:0}
+  .spec dd{margin:0;color:#c4cdd9}
+  code{background:rgba(127,179,255,.1);border:1px solid var(--line);border-radius:5px;
+       padding:1px 6px;font-size:13.5px;color:#cfe0ff}
+  .limits{border-left:3px solid var(--gold);padding-left:18px;margin:18px 0}
+  .btn{display:inline-block;background:var(--gold);color:#17120a;font-weight:650;
+       padding:12px 20px;border-radius:9px;text-decoration:none;font-size:15px;margin-top:6px}
+  footer{border-top:1px solid var(--line);padding:30px 0 48px;color:var(--dim);font-size:13.6px}
+  @media (max-width:560px){ .hero{padding:44px 0 32px} .spec div{flex-direction:column;gap:3px} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap brand">
+    <a class="logo" href="/">Arga</a>
+    <span class="tag">Expert evaluation for AI video</span>
+    <a class="back" href="/">&larr; Back</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <h1>How the data is collected</h1>
+    <p class="lede">
+      Preference data is only as good as the controls around it. This page states exactly
+      how Arga's evaluation works, including the parts that limit what the data can tell you.
+    </p>
+  </div>
+
+  <section>
+    <h2>The task</h2>
+    <p>
+      Blind pairwise comparison. A rater sees two clips generated from the same prompt, side
+      by side, and decides which is better on each craft criterion: <b>A</b>, <b>B</b> or
+      <b>Tie</b>. Raters are never told which system produced which clip.
+    </p>
+    <p>
+      Default criteria: overall, visual quality, motion and physics, prompt alignment,
+      lighting continuity, acting and performance. <code>overall</code> is always present and
+      is the axis used for quality scoring and agreement. The criteria set is configurable
+      per batch.
+    </p>
+  </section>
+
+  <section>
+    <h2>Bias controls</h2>
+    <dl class="spec">
+      <div><dt>Position randomised</dt><dd>Left/right order is randomised per rater and per pair, recorded at assignment, and resolved back to the original A/B at export. Raters see "A" on the left and "B" on the right — those are screen positions, not model identities.</dd></div>
+      <div><dt>Opaque clip delivery</dt><dd>Clips are streamed through an anonymous endpoint. No model name or file name is visible in the interface or in the browser's network tab.</dd></div>
+      <div><dt>Randomised order</dt><dd>Each rater receives their queue in a different random order, so batch-position effects don't align across raters.</dd></div>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Quality controls</h2>
+    <p>Two independent controls run on every batch. One measures whether a rater tracks
+      ground truth; the other measures whether raters agree with each other.</p>
+    <dl class="spec">
+      <div><dt>Gold pairs</dt><dd>Items with a known correct answer, seeded invisibly into each rater's queue at roughly <b>10%</b>. They are indistinguishable from normal items. Accuracy is scored on the <code>overall</code> choice, and raters below <b>75%</b> are flagged for review.</dd></div>
+      <div><dt>Overlap set</dt><dd>Roughly <b>20%</b> of non-gold pairs go to two raters, producing Cohen's &kappa; per rater pair plus overall percent agreement.</dd></div>
+      <div><dt>Evidence requirement</dt><dd>Every rating carries a written reason of at least 25 characters that <b>must cite a timestamp</b> (e.g. <code>0:03</code>). A judgement without a locatable moment is rejected at entry.</dd></div>
+      <div><dt>Confidence</dt><dd>Each rating carries a self-reported 1&ndash;3 confidence value, so low-certainty calls can be filtered or weighted.</dd></div>
+      <div><dt>Append-only</dt><dd>The ratings store refuses UPDATE and DELETE, and the application exposes no edit endpoint. A submitted rating is immutable.</dd></div>
+      <div><dt>Senior review</dt><dd>Overlap pairs where raters disagree on <code>overall</code> are surfaced with both reasons for review before delivery.</dd></div>
+    </dl>
+  </section>
+
+  <section>
+    <h2>What you receive</h2>
+    <div class="card">
+      <dl class="spec">
+        <div><dt>ratings.csv</dt><dd>One row per rating, side mapping resolved to the original A/B, one column per criterion.</dd></div>
+        <div><dt>ratings.jsonl</dt><dd>The same records, one JSON object per line.</dd></div>
+        <div><dt>Report</dt><dd>Criteria breakdown with tie rates, per-rater gold accuracy, Cohen's &kappa; per rater pair, the disagreement cases with reasoning, and a delivery-readiness table.</dd></div>
+        <div><dt>Methodology</dt><dd>This document, versioned with the batch.</dd></div>
+        <div><dt>manifest.json</dt><dd>Counts, SHA-256 checksums and generation time, so the pack can be verified.</dd></div>
+      </dl>
+    </div>
+    <p class="dim">Gold pairs are excluded from delivered exports — they measure raters, not models.
+      Rater names never appear in any export, only stable pseudonymous rater IDs.</p>
+  </section>
+
+  <section>
+    <h2>Stated limits</h2>
+    <p class="tight">The things this data cannot tell you, said plainly rather than discovered later:</p>
+    <div class="limits">
+      <ul>
+        <li><b>Time-on-task is browser-measured</b> and can be gamed. Treat it as a signal, not a guarantee.</li>
+        <li><b>Percent agreement is not chance-corrected.</b> Cohen's &kappa; is reported alongside it for that reason.</li>
+        <li><b>Agreement and gold accuracy are computed on <code>overall</code> only</b>, not per criterion.</li>
+        <li><b>Free-text reasons may say "left" or "right"</b>, which refer to screen position, not original A/B.</li>
+        <li><b>Rater pools carry their own aesthetic priors.</b> A pool of Indian film professionals judges craft against the conventions they work in. That is the point of the data, and it is also a bound on it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pilot</h2>
+    <p>Arga is taking its first pilot partners. A pilot is a fixed batch of rated pairs with
+      the full pack above, so you can judge the data on its own terms before committing to volume.</p>
+    <a class="btn" href="mailto:abhi@arga.co.in?subject=Arga%20pilot">Talk about a pilot</a>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  &copy; <span id="y">2026</span> Arga &middot; <a href="/">arga.co.in</a>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>

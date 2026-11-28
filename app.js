@@ -42,6 +42,30 @@
     el.addEventListener("mouseleave", () => { el.style.transform = ""; });
   });
 
+  /* before/after loops: load and play only while on screen */
+  const loops = document.querySelectorAll("video.loop");
+  if (loops.length) {
+    const vio = "IntersectionObserver" in window ? new IntersectionObserver((es) => es.forEach((e) => {
+      const v = e.target;
+      if (e.isIntersecting) { if (!v.getAttribute("src")) v.src = v.dataset.src; if (!reduce) v.play().catch(() => {}); }
+      else v.pause();
+    }), { threshold: 0.35 }) : null;
+    loops.forEach((v) => { if (vio) vio.observe(v); else v.src = v.dataset.src; });
+  }
+
+  /* the finished reel, with sound */
+  const player = document.getElementById("player");
+  if (player) {
+    const pv = player.querySelector("video");
+    const close = () => { pv.pause(); pv.removeAttribute("src"); pv.load(); player.hidden = true; document.body.style.overflow = ""; };
+    document.querySelectorAll("button.play").forEach((b) => b.addEventListener("click", () => {
+      pv.poster = b.dataset.poster; pv.src = b.dataset.reel; player.hidden = false; document.body.style.overflow = "hidden";
+      pv.play().catch(() => {});
+    }));
+    player.addEventListener("click", (e) => { if (e.target === player || e.target.closest(".x")) close(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !player.hidden) close(); });
+  }
+
   /* the live flow inside the hero */
   const $ = (s) => document.querySelector(s);
   const wait = (ms) => new Promise((r) => setTimeout(r, ms));

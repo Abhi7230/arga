@@ -259,3 +259,28 @@ footer a{color:var(--dim);text-decoration:none}
 .wa-fab:hover{transform:translateY(-3px)}
 .wa-fab svg{width:22px;height:22px}
 @media (max-width:520px){.wa-fab span{display:none}.wa-fab{padding:13px}}
+
+/* real before/after edits */
+.demos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.demo{border-radius:var(--r);background:var(--panel);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:border-color .3s,transform .3s}
+.demo:hover{border-color:rgba(255,198,92,.35);transform:translateY(-4px)}
+.demo .cmp{position:relative;aspect-ratio:9/8;background:#000}
+.demo .cmp video{width:100%;height:100%;object-fit:cover;display:block}
+.demo .tag{position:absolute;top:10px;font:700 11.5px/1 var(--body);padding:6px 9px;border-radius:999px;background:rgba(7,8,12,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:var(--ink)}
+.demo .tag.l{left:10px}
+.demo .tag.r{right:10px;background:linear-gradient(135deg,var(--marigold),var(--saffron));color:#1a0f02}
+.demo .body{padding:20px 20px 22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.demo h3{font:700 19px/1.25 var(--display);margin:0}
+.demo ul{margin:0;padding-left:18px;color:var(--dim);font-size:14.5px}
+.demo li{margin:4px 0}
+.demo .capx{margin:0;font-size:13.5px;color:var(--dim);background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.demo .capx b{color:var(--marigold);display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
+.demo .capx i{color:var(--sky);font-style:normal}
+.demo .play{margin-top:auto;align-self:flex-start}
+.fine{color:var(--mute);font-size:12.5px;margin:18px 0 0}
+@media (max-width:900px){.demos{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
+.player{position:fixed;inset:0;z-index:100;background:rgba(4,5,8,.88);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);display:grid;place-items:center;padding:24px 16px}
+.player[hidden]{display:none}
+.player .pbox{position:relative;height:min(86vh,860px);aspect-ratio:9/16;max-width:100%}
+.player video{width:100%;height:100%;border-radius:18px;background:#000;object-fit:contain;display:block}
+.player .x{position:absolute;top:-12px;right:-12px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line2);background:#14161f;color:var(--ink);font-size:22px;line-height:1;cursor:pointer;z-index:2}

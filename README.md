@@ -1,13 +1,10 @@
 # Arga
 
-**Expert evaluation for AI video models.**
+**Autopilot for Instagram and YouTube.**
 
-Arga puts vetted Indian film, VFX and editing professionals in front of AI-generated video.
-They compare clips in pairs and write timestamped, craft-specific reasons — where a camera
-move breaks, where light direction flips between cuts, why a shot doesn't hold.
-
-Every batch is gold-checked and inter-rater agreement is tracked (Cohen's kappa), so the
-preference data that comes out is something a model team can train and benchmark on.
+Send your phone clips on WhatsApp. Arga plans the posts, writes the captions in Hinglish,
+Hindi or English, edits your clips into reels and posts them at the right time. You approve
+with a tap, or let it autopost.
 
 - **Website:** https://arga.co.in
 - **Contact:** abhi@arga.co.in

@@ -2,70 +2,95 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>How Arga Autopilot works</title>
 <meta name="description" content="How Arga turns your phone clips into finished reels with captions and posts them to Instagram and YouTube Shorts, with your approval on WhatsApp.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f1115'/><text y='70' x='50' text-anchor='middle' font-size='58' font-family='Georgia,serif' fill='%23e8b668'>A</text></svg>">
-<style>
-  :root{--bg:#0d0f13;--panel:#14171d;--line:#232833;--ink:#eef1f6;--dim:#9aa4b2;--gold:#e8b668;--accent:#7fb3ff;--max:860px}
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0}
-  body{background:var(--bg);color:var(--ink);font:16px/1.7 ui-sans-serif,-apple-system,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
-  a{color:var(--accent)}
-  header{padding:22px 0;border-bottom:1px solid var(--line)}
-  .brand{display:flex;align-items:baseline;gap:12px;text-decoration:none}
-  .logo{font:600 25px/1 Georgia,serif;color:var(--gold)}
-  .tag{color:var(--dim);font-size:13.5px}
-  h1{font:600 clamp(30px,5vw,44px)/1.15 Georgia,serif;margin:52px 0 14px}
-  .lede{color:#c9d2de;font-size:18px;max-width:62ch;margin:0 0 34px}
-  h2{font:600 22px/1.3 Georgia,serif;margin:40px 0 10px}
-  p{color:#c4cdd9;max-width:66ch}
-  ol.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:14px}
-  ol.steps li{counter-increment:s;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 18px 18px 60px;position:relative;color:#c4cdd9}
-  ol.steps li::before{content:counter(s);position:absolute;left:18px;top:18px;width:28px;height:28px;border-radius:50%;background:rgba(232,182,104,.14);color:var(--gold);font-weight:700;font-size:13px;display:grid;place-items:center}
-  ol.steps b{color:var(--ink)}
-  ul{color:#c4cdd9;padding-left:20px} li{margin:6px 0}
-  .btn{display:inline-block;background:var(--gold);color:#17120a;font-weight:650;padding:13px 22px;border-radius:9px;text-decoration:none;font-size:15.5px;margin-top:10px}
-  footer{border-top:1px solid var(--line);margin-top:56px;padding:30px 0 48px;color:var(--dim);font-size:13.6px}
-</style>
+<meta name="theme-color" content="#07080c">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23ffc65c'/><stop offset='1' stop-color='%23ff6a3d'/></linearGradient></defs><rect width='100' height='100' rx='24' fill='url(%23g)'/><text y='72' x='50' text-anchor='middle' font-size='62' font-weight='800' font-family='Arial,sans-serif' fill='%231a0f02'>A</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/style.css">
 </head>
-<body>
-<header><div class="wrap"><a class="brand" href="/"><span class="logo">Arga</span><span class="tag">Autopilot for Instagram &amp; YouTube</span></a></div></header>
+<body class="page">
+<div class="ambient"></div><div class="grain"></div>
 
-<main class="wrap">
-  <h1>How Arga Autopilot works</h1>
-  <p class="lede">You keep running your business. Arga turns what you already shoot on your phone into a steady stream of reels, and posts them for you.</p>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">A</span><b>Arga</b><small>Autopilot</small></a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/#pricing">Pricing</a>
+      <a class="btn primary sm" href="mailto:abhi@arga.co.in?subject=Arga%20free%20week">Free week</a>
+    </nav>
+  </div>
+</header>
 
-  <h2>From clip to posted reel</h2>
-  <ol class="steps">
-    <li><b>Connect your accounts once.</b> Link Instagram and YouTube. Arga posts only to the accounts you connect.</li>
-    <li><b>Send your clips.</b> On WhatsApp, whenever you have them: a new product, a busy evening at your café, a client transformation at your gym, you explaining something. Rough, unedited phone clips are fine.</li>
-    <li><b>Arga picks the moments.</b> It listens to what's said, finds the strongest seconds, removes the dead air and puts the most interesting moment first so people stop scrolling.</li>
-    <li><b>It finishes the reel.</b> Vertical framing, clean cuts, readable captions on screen, a colour pass, and music where it fits.</li>
-    <li><b>It writes the post.</b> A caption in your language (Hinglish, Hindi or English), hashtags, and a posting time chosen for your audience, around Indian festivals and occasions.</li>
-    <li><b>You approve, or it autoposts.</b> Each reel arrives on WhatsApp. Tap to approve, ask for a change, or skip it. With autopost on, finished reels go out on schedule by themselves.</li>
-  </ol>
+<main>
+  <section style="padding-top:70px">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="kicker">How it works</div>
+        <h1>From clip to <span class="glow">posted reel</span>.</h1>
+        <p class="lede">You keep running your business. Arga turns what you already shoot on your phone into a steady stream of reels, and posts them for you.</p>
+      </div>
 
-  <h2>What we never do</h2>
-  <ul>
-    <li>Make fake people, fake reviews or fake claims about your business.</li>
-    <li>Use stock footage and pass it off as yours.</li>
-    <li>Post anything you haven't approved, unless you switch on autopost.</li>
-    <li>Share or sell your footage. Your clips are used only to make your posts.</li>
-  </ul>
+      <div class="timeline reveal">
+        <div class="tl"><span class="dot">1</span><h3>Connect your accounts once</h3><p>Link Instagram and YouTube. Arga posts only to the accounts you connect.</p></div>
+        <div class="tl"><span class="dot">2</span><h3>Send your clips</h3><p>On WhatsApp, whenever you have them: a new product, a busy evening at your café, a transformation at your gym, you explaining something. Rough, unedited phone clips are fine.</p></div>
+        <div class="tl"><span class="dot">3</span><h3>Arga picks the moments</h3><p>It listens to what's said, finds the strongest seconds, removes the dead air and puts the most interesting moment first, so people stop scrolling.</p></div>
+        <div class="tl"><span class="dot">4</span><h3>It finishes the reel</h3><p>Vertical framing, clean cuts, readable captions on screen, a colour pass, and music where it fits.</p></div>
+        <div class="tl"><span class="dot">5</span><h3>It writes the post</h3><p>A caption in your language (Hinglish, Hindi or English), hashtags, and a posting time chosen for your audience, around Indian festivals and occasions.</p></div>
+        <div class="tl"><span class="dot">6</span><h3>You approve, or it autoposts</h3><p>Each reel arrives on WhatsApp. Tap to approve, ask for a change, or skip it. With autopost on, finished reels go out on schedule by themselves.</p></div>
+      </div>
+    </div>
+  </section>
 
-  <h2>What you need</h2>
-  <ul>
-    <li>An Instagram business or creator account and/or a YouTube channel.</li>
-    <li>A phone that shoots video, and WhatsApp.</li>
-    <li>A minute a day to approve.</li>
-  </ul>
+  <section style="padding-top:20px">
+    <div class="wrap reveal">
+      <div class="kicker">Promises</div>
+      <h2>What we never do.</h2>
+      <div class="never" style="margin-top:24px">
+        <div>Make fake people, fake reviews or fake claims about your business.</div>
+        <div>Use stock footage and pass it off as yours.</div>
+        <div>Post anything you haven't approved, unless you switch on autopost.</div>
+        <div>Share or sell your footage. Your clips are used only to make your posts.</div>
+      </div>
+    </div>
+  </section>
 
-  <a class="btn" href="mailto:abhi@arga.co.in?subject=Arga%20free%20week">Start your free week</a>
+  <section style="padding-top:20px">
+    <div class="wrap reveal">
+      <div class="kicker">What you need</div>
+      <h2>A phone, WhatsApp and a minute a day.</h2>
+      <div class="who" style="margin-top:24px">
+        <span><b>📸</b>An Instagram business or creator account</span>
+        <span><b>▶️</b>And/or a YouTube channel</span>
+        <span><b>📱</b>A phone that shoots video</span>
+        <span><b>💬</b>WhatsApp</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="final">
+    <div class="wrap reveal">
+      <div class="finalbox">
+        <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
+        <h2>Try it free for a week.</h2>
+        <p>5 finished reels from your own clips, with captions, posted for you.</p>
+        <div class="cta"><a class="btn primary" href="mailto:abhi@arga.co.in?subject=Arga%20free%20week">Start your free week →</a></div>
+      </div>
+    </div>
+  </div>
 </main>
 
-<footer class="wrap">© <span id="y">2026</span> Arga. <a href="/">Home</a></footer>
+<footer>
+  <div class="wrap">
+    <span>© <span id="y">2026</span> Arga · Founded by Abhi Raj · Delhi NCR, India</span>
+    <span><a href="/">Home</a> · <a href="mailto:abhi@arga.co.in">abhi@arga.co.in</a></span>
+  </div>
+</footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<script src="/app.js"></script>
 </body>
 </html>
